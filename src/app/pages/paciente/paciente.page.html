@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      Detalles - Paciente
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list lines="full">
+    
+      <ion-item *ngIf="paciente" >
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input required type="text"  [(ngModel)]="paciente.nombre"></ion-input>
+      </ion-item>
+      
+      <ion-item *ngIf="paciente" >
+        <ion-label position="floating">Apellidos</ion-label>
+        <ion-input required type="text"  [(ngModel)]="paciente.apellidos"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="paciente" >
+        <ion-label position="floating">Fecha</ion-label>
+        <ion-datetime displayFormat="MM DD YY" [(ngModel)]="paciente.fecha"></ion-datetime> 
+        
+      </ion-item>
+    
+      <ion-item *ngIf="paciente" >
+        <ion-label position="floating">Estatura(cm)</ion-label>
+        <ion-input required type="number" value="210"  [(ngModel)]="paciente.estatura"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="paciente" >
+        <ion-label position="floating">Dirección</ion-label>
+        <ion-input required type="text" placeholder="Dirección" [(ngModel)]="paciente.direccion"></ion-input>
+      </ion-item>
+
+  </ion-list>
+
+  <ion-button expand="full" (click)="savePaciente()">Guardar</ion-button>
+  <ion-button expand="full" (click)="cancelar()" color="danger">Cancelar </ion-button>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" color="danger">
+    <ion-fab-button color="danger" routerLink="/" routerDirection="forward" (click)="removePaciente(pacienteId)">
+      <ion-icon name="trash"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
