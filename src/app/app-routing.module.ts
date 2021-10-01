@@ -6,11 +6,7 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
+ 
   {
     path: 'paciente/:id', //modificar paciente
     loadChildren: () => import('./pages/paciente/paciente.module').then( m => m.PacientePageModule)
@@ -18,6 +14,11 @@ const routes: Routes = [
   {
     path: 'paciente', // agregar paciente
     loadChildren: () => import('./pages/paciente/paciente.module').then( m => m.PacientePageModule)
+  },
+  {
+
+    path: '',
+    loadChildren: () => import('./tab/tab.module').then( m => m.TabPageModule)
   },
   {
     path: 'historial', //lista de historiales
@@ -31,7 +32,6 @@ const routes: Routes = [
     path: 'detalle-historial', // agregar historial
     loadChildren: () => import('./pages/detalle-historial/detalle-historial.module').then( m => m.DetalleHistorialPageModule)
   },
-
 ];
 
 @NgModule({

@@ -7,29 +7,30 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-list-header lines="inset">
-    <ion-label>Nombre</ion-label>
-    <ion-label>Fecha Nacimiento</ion-label>
-  </ion-list-header>
+  <ion-card-header lines="inset">
+    <ion-card-subtitle>DETALLES</ion-card-subtitle>
+  </ion-card-header>
   
-  <ion-grid color="primary">
+  <ion-card>
     <ion-item-sliding *ngFor="let elem of pacienteAll">
-      <ion-row lines="inset" button [routerLink]="['/paciente', elem.id]">
-        <ion-col size="9">
-          {{elem.nombre}} {{elem.apellidos}}
-        </ion-col>
-        <ion-col >
-          {{elem.fecha | date:'MM/dd/yyyy'}} 
-        </ion-col>
-      </ion-row>
-      <br>
+      <ion-card>
+        <ion-row lines="inset" button [routerLink]="['/paciente', elem.id]">
+          <ion-col size="9">
+            {{elem.nombre}} {{elem.apellidos}}
+          </ion-col>
+          <ion-col >
+            {{elem.fecha | date:'MM/dd/yyyy'}} 
+          </ion-col>
+        </ion-row>
+    </ion-card>
       <ion-item-options side="end">
           <ion-item-option  (click)="removePaciente(item)" color="secondary">
             <ion-icon name="checkmark" slot="end"></ion-icon>
           </ion-item-option>      
       </ion-item-options>
     </ion-item-sliding>
-  </ion-grid>
+  </ion-card>
+  
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button routerLink="/paciente" routerDirection="forward">
       <ion-icon name="Add"></ion-icon>
