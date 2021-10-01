@@ -14,7 +14,7 @@ export class HomePage  implements OnInit{
 
   ngOnInit(){
     this.pacieenteService.getPacienteAll().subscribe(res=>{
-      console.log("pacientes de mrd", res);
+      console.log("pacientes de mrd x2", res);
       this.pacienteAll=res;
     })
   }
