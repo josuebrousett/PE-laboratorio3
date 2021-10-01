@@ -20,12 +20,16 @@ const routes: Routes = [
     loadChildren: () => import('./pages/paciente/paciente.module').then( m => m.PacientePageModule)
   },
   {
-    path: 'historial',
+    path: 'historial', //lista de historiales
     loadChildren: () => import('./pages/historial/historial.module').then( m => m.HistorialPageModule)
   },
+  // {
+  //   path: 'historial/:id',
+  //   loadChildren: () => import('./pages/historial/historial.module').then( m => m.HistorialPageModule)
+  // },
   {
-    path: 'historial/:id',
-    loadChildren: () => import('./pages/historial/historial.module').then( m => m.HistorialPageModule)
+    path: 'detalle-historial', // modificar historial
+    loadChildren: () => import('./pages/detalle-historial/detalle-historial.module').then( m => m.DetalleHistorialPageModule)
   },
 
 ];
