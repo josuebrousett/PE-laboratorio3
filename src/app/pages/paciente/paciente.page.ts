@@ -3,6 +3,7 @@ import { paciente } from 'src/app/models/paciente.interface';
 import { PacienteService } from 'src/app/services/paciente.service';
 import { ActivatedRoute } from '@angular/router';
 import { NavController, LoadingController } from '@ionic/angular';
+import { Geolocation } from '@capacitor/geolocation'
 
 
 @Component({
@@ -18,7 +19,9 @@ export class PacientePage implements OnInit {
     fecha: '',
     estatura: 0,
     direccion: '',
-    ubicacion: ''
+    ubicacion: '',
+    latitud: 0,
+    longitud: 0
   };
   pacienteId= null;
 
@@ -46,6 +49,14 @@ export class PacientePage implements OnInit {
     });
   }
 
+  async obtenerCoordenadas(){
+    
+    const obtenerCoordenada= await Geolocation.getCurrentPosition();
+    this.paciente.latitud=obtenerCoordenada.coords.latitude;
+    this.paciente.longitud=obtenerCoordenada.coords.longitude;
+  }
+
+
   async  savePaciente(){
     const loading = await this.loadingController.create({
       message: 'Guardando..'
@@ -64,6 +75,7 @@ export class PacientePage implements OnInit {
       });
     }
   }
+
 
   removePaciente(id:string){
     console.log(id);

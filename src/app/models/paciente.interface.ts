@@ -6,5 +6,7 @@ export interface paciente{
     estatura: number;
     ubicacion:string;
     direccion:string;
+    latitud:number;
+    longitud:number;
 
 }
