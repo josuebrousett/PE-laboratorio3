@@ -14,7 +14,7 @@ const routes: Routes = [
       },
       {
         path: 'tab2',
-        loadChildren: () => import('../pages/paciente/paciente.module').then(m => m.PacientePageModule)
+        loadChildren: () => import('../pages/historial/historial.module').then(m => m.HistorialPageModule)
       },
       {
         path: '',
