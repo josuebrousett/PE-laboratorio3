@@ -13,7 +13,7 @@
   
   <ion-grid color="primary">
     <ion-item-sliding *ngFor="let elem of historialAll">
-      <ion-row lines="inset" button [routerLink]="['/historial', elem.id]">
+      <ion-row lines="inset" button [routerLink]="['/detalle-historial', elem.id]">
         <ion-col size="9">
           {{elem.fecha | date:'MM/dd/yyyy'}} 
         </ion-col>
@@ -27,7 +27,7 @@
     </ion-item-sliding>
   </ion-grid>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button routerLink="/historial" routerDirection="forward">
+    <ion-fab-button routerLink="/detalle-historial" routerDirection="forward">
       <ion-icon name="Add"></ion-icon>
     </ion-fab-button>
   </ion-fab>

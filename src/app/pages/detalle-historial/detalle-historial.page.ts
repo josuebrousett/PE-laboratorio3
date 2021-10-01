@@ -3,6 +3,7 @@ import { historial } from 'src/app/models/historial.interface';
 import { HistorialService } from 'src/app/services/historial.service';
 import { ActivatedRoute } from '@angular/router';
 import { NavController, LoadingController } from '@ionic/angular';
+import { PacientePage } from '../paciente/paciente.page';
 
 @Component({
   selector: 'app-detalle-historial',

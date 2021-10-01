@@ -12,11 +12,11 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'paciente/:id',
+    path: 'paciente/:id', //modificar paciente
     loadChildren: () => import('./pages/paciente/paciente.module').then( m => m.PacientePageModule)
   },
   {
-    path: 'paciente',
+    path: 'paciente', // agregar paciente
     loadChildren: () => import('./pages/paciente/paciente.module').then( m => m.PacientePageModule)
   },
   {
@@ -28,7 +28,7 @@ const routes: Routes = [
   //   loadChildren: () => import('./pages/historial/historial.module').then( m => m.HistorialPageModule)
   // },
   {
-    path: 'detalle-historial', // modificar historial
+    path: 'detalle-historial', // agregar historial
     loadChildren: () => import('./pages/detalle-historial/detalle-historial.module').then( m => m.DetalleHistorialPageModule)
   },
 
