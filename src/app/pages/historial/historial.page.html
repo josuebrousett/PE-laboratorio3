@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      Historial
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list-header lines="inset">
+        <ion-label>Fechas </ion-label>
+  </ion-list-header>
+  
+  <ion-grid color="primary">
+    <ion-item-sliding *ngFor="let elem of historialAll">
+      <ion-row lines="inset" button [routerLink]="['/historial', elem.id]">
+        <ion-col size="9">
+          {{elem.fecha | date:'MM/dd/yyyy'}} 
+        </ion-col>
+      </ion-row>
+      <br>
+      <ion-item-options side="end">
+          <ion-item-option  (click)="removeHistorial(item)" color="secondary">
+            <ion-icon name="checkmark" slot="end"></ion-icon>
+          </ion-item-option>      
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-grid>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/historial" routerDirection="forward">
+      <ion-icon name="Add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
