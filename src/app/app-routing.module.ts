@@ -6,11 +6,7 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
+ 
   {
     path: 'paciente/:id',
     loadChildren: () => import('./pages/paciente/paciente.module').then( m => m.PacientePageModule)
@@ -18,6 +14,10 @@ const routes: Routes = [
   {
     path: 'paciente',
     loadChildren: () => import('./pages/paciente/paciente.module').then( m => m.PacientePageModule)
+  },
+  {
+    path: '',
+    loadChildren: () => import('./tab/tab.module').then( m => m.TabPageModule)
   },
 ];
 
